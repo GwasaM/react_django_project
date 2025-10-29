@@ -7,13 +7,17 @@ import Register from '../components/Register'
 import Login from '../components/Login'
 import Main from '../components/Main'
 import {BrowserRouter, Routes, Route} from 'react-router-dom'
+import AuthProvider from '../components/AuthProvider'
 
 
 
 function App() {
+
+
   return (
    <>
-   <BrowserRouter>
+<AuthProvider>
+ <BrowserRouter>
    <Header/>
     <Routes>
       <Route path = '/' element = {<Main/>} />
@@ -21,7 +25,9 @@ function App() {
       <Route path='/login' element={<Login/>} />
     </Routes>
     <Footer/>
-   </BrowserRouter>
+  </BrowserRouter>
+</AuthProvider>
+
    </>
   )
 }
